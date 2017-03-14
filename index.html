@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>The Refugee Nation</title>
+	<meta name="author" content="The Refugee Nation" />
+	<meta name="description" content="" />
+	<meta name="keywords"  content="" />
+	<meta name="Resource-type" content="Document" />
+
+	<link rel="stylesheet" type="text/css" href="./css/jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="./css/flexboxgrid.css" />
+	<link rel="stylesheet" type="text/css" href="./css/style.css" />
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="./js/scrolloverflow.js"></script>
+	<script type="text/javascript" src="./js/jquery.fullPage.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			$('#fullpage').fullpage({
+				anchors: ['TheRefugeeNation', 'SymbolicFlag', 'OurNation', 'Film', 'OurFlag', 'OurFlagFilm', 'OurAnthem', 'OurAnthemFilm', 'OurPeople', 'News', 'Help'],
+				sectionsColor: ['#191919', '#191919', '#191919', '#191919', '#191919', '#191919', '#191919', '#191919', '#191919', '#191919', '#f16841',],
+				navigation: true,
+				navigationPosition: 'left',
+				navigationTooltips: ['The Refugee Nation', 'A Symbolic Flag', 'Our Nation', 'Film', 'Our Flag', 'Our Flag Film', 'Our Anthem', 'Our Anthem Film', 'Our People', 'Recent News', 'How Can I Help?'],
+
+				verticalCentered: true,
+				controlArrows: false,
+
+				lazyLoading: true,
+
+				scrollingSpeed: 1000,
+				easing: 'easeInOutQuint',
+				easingcss3: 'cubic-bezier(0.80, 0, 0.20, 1)',
+
+				loopHorizontal: false,
+				loopBottom: false,
+
+				'afterLoad': function(anchorLink, index){
+
+					if(index == 4){
+						$('#section3 .filmTitle').addClass('active').delay(3000).queue(function(next){
+							$(this).removeClass('active');
+							next();
+						});
+					}
+
+					if(index == 6){
+						$('#section5 .filmTitle').addClass('active').delay(3000).queue(function(next){
+							$(this).removeClass('active');
+							next();
+						});
+					}
+
+					if(index == 8){
+						$('#section7 .filmTitle').addClass('active').delay(3000).queue(function(next){
+							$(this).removeClass('active');
+							next();
+						});
+					}
+				}
+			});
+			
+			$('#down-btn').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.moveSectionDown();
+			});
+
+			$('#help-btn').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.moveTo(11);
+			});
+
+			$('#logo').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.moveTo(1);
+			});
+
+			$(window).load(function () {
+
+
+				var $el = $(".load-text:first"), text = $el.text(),
+			    words = text.split(" ");
+
+				var html = "";
+				for (var i = 0; i < words.length; i++) {
+				    html += "<span>" + words[i] + " </span>";
+				};
+
+				$('.load-text').css('opacity',1);
+
+				$el.html(html).children().hide().each(function(i){
+				  $(this).delay(i*200).fadeIn(500);
+				});
+
+				$('#logo-animation').delay(2000).queue(function(next){
+					$(this).addClass('animate');
+					next();
+				});
+
+				$('.load-text').delay(4500).queue(function(next){
+					$(this).fadeOut(500);
+					next();
+				});
+
+
+				$('.the-animation').delay(5000).queue(function(next){
+					$('.the-animation').fadeIn(500);
+					$('.refugee').delay(300).fadeIn(500);
+					$('.nation').delay(600).fadeIn(500);
+					next();
+				});
+
+				$('#loader').delay(7000).queue(function(next){
+					$(this).addClass('loaded');
+					$('#logo').delay(1500).fadeIn(500);
+					$('#share').delay(1500).fadeIn(500);
+					$('#fp-nav').delay(2000).fadeIn(500);
+					$('#follow').delay(2500).hide().fadeIn(500);
+					$('#help-btn').delay(2500).fadeIn(500);
+					next();
+				});
+
+			});
+
+		});
+	</script>
+
+</head>
+
+<body>
+
+
+
+
+<div id="logo">
+	<img src="img/logo-2.svg">
+</div>
+
+<div id="share">
+	<img src="img/share-icon-placeholder.png">
+</div>
+
+
+<div id="follow">
+	FIND US ON&nbsp;
+	<div class="follow-btn">
+		<a class="fixed" target="_blank" href="https://www.facebook.com/GoRefugeeNation/"></a>
+		<svg>
+		<path class="follow-svg" d="M18.6,12.3h-2.4v-1.6c0-0.6,0.4-0.7,0.7-0.7c0.3,0,1.7,0,1.7,0V7.3l-2.4,0c-2.6,0-3.2,2-3.2,3.2v1.8h-1.5V15
+	h1.5c0,3.5,0,7.7,0,7.7h3.2c0,0,0-4.2,0-7.7h2.2L18.6,12.3z"/>
+		</svg>
+	</div>
+	<div class="follow-btn">
+		<a class="fixed" target="_blank" href="https://twitter.com/refugeenation"></a>
+		<svg>
+		<path class="follow-svg" d="M22.3,10.5c-0.5,0.2-1.1,0.4-1.7,0.5c0.6-0.4,1.1-1,1.3-1.6C21.3,9.7,20.6,9.9,20,10c-0.5-0.6-1.3-0.9-2.2-0.9
+	c-1.6,0-3,1.3-3,3c0,0.2,0,0.5,0.1,0.7c-2.5-0.1-4.7-1.3-6.1-3.1c-0.3,0.4-0.4,1-0.4,1.5c0,1,0.5,1.9,1.3,2.5
+	c-0.5,0-0.9-0.2-1.3-0.4c0,0,0,0,0,0c0,1.4,1,2.6,2.4,2.9c-0.2,0.1-0.5,0.1-0.8,0.1c-0.2,0-0.4,0-0.6-0.1c0.4,1.2,1.5,2,2.8,2.1
+	c-1,0.8-2.3,1.3-3.7,1.3c-0.2,0-0.5,0-0.7,0c1.3,0.8,2.9,1.3,4.6,1.3c5.5,0,8.5-4.5,8.5-8.5c0-0.1,0-0.3,0-0.4
+	C21.3,11.6,21.9,11.1,22.3,10.5z"/>
+		</svg>
+	</div>
+	<div class="follow-btn">
+		<a class="fixed" href="mailto:therefugeenation@gmail.com"></a>
+		<svg>
+		<g transform="translate(0,-952.36218)">
+	<path class="follow-svg" d="M7.5,962.3c-0.1,0-0.2,0.1-0.2,0.2v0.2l7.6,5.9l7.6-5.9v-0.2c0-0.1-0.1-0.2-0.2-0.2H7.5z M7.4,964v8.2
+		c0,0.1,0.1,0.2,0.2,0.2h14.9c0.1,0,0.2-0.1,0.2-0.2V964l-7.4,5.7c-0.1,0.1-0.3,0.1-0.5,0L7.4,964z"/>
+		</g>
+	</svg>
+	</div>
+</div>
+
+
+<div id="down-btn">
+	<svg>
+    	<rect class="down-bottom" x="0" y="0" fill="none" width="45" height="45" />
+    	<rect class="down-top" x="0" y="0" fill="none" width="45" height="45" />
+  	</svg>
+  	<svg>
+  		<g class="down-arrow-g">
+		<polyline class="down-arrow" points="32.5,17.5 22.5,27.5 12.5,17.5 "/>
+		</g>
+  	</svg>
+</div>
+
+<div id="help-btn">
+	<svg>
+    	<rect class="help-top"x="0" y="0" fill="none" width="100" height="57" />
+  	</svg>
+  	How can<br>I Help?
+</div>
+
+
+<div id="loader">
+	<div id="logo-animation">
+		<h1 class="load-text">A symbolic nation to represent 65 million displaced people worldwide.</h3>
+		<svg>
+		<rect class="frame" x="4" y="4" fill="none" width="492" height="270" />
+		<path class="the-animation" d="M54.8,52.3H94V62.63H80.52v39.54H68.26V62.63H54.8V52.3Z"/><path class="the-animation" d="M112,102.17H100v-52h12V68.82a9.37,9.37,0,0,1,4-3.49A13,13,0,0,1,121.91,64q6.34,0,9.73,3.78T135,78.09v24.08h-12V79.94a5.71,5.71,0,0,0-1.39-4.1,5.3,5.3,0,0,0-4-1.46q-5.63,0-5.63,5.7v22.09Z"/><path class="the-animation" d="M176.42,87.28H153.19v0.85a6.61,6.61,0,0,0,1.68,4.67,6.12,6.12,0,0,0,4.74,1.82q4.56,0,6.06-3.56H176.2a13.56,13.56,0,0,1-5.63,8.59,18.09,18.09,0,0,1-11,3.38q-8.19,0-13.07-4.49t-4.88-12.4V81.51q0-8,4.67-12.75t13-4.77q8.12,0,12.61,4.7a16.36,16.36,0,0,1,4.49,11.76v6.84Zm-23.23-7.77V80.3h12.25V78.94a7,7,0,0,0-1.53-4.7,5.64,5.64,0,0,0-4.52-1.78Q153.19,72.46,153.19,79.51Z"/>
+		<path class="refugee" d="M86.79,163.37l-8.48-14.82H70.26v14.82H58V113.5H81.44q8.83,0,13.75,4.88t4.92,12.72a17.48,17.48,0,0,1-2.46,9.3,16.14,16.14,0,0,1-6.8,6.16L101,163.37H86.79Zm1.07-32.13a8,8,0,0,0-2-5.77A7.63,7.63,0,0,0,80,123.33H70.26v15.53H80a7.78,7.78,0,0,0,5.81-2.07A7.59,7.59,0,0,0,87.86,131.24Z"/><path class="refugee" d="M140.3,148.48H117.07v0.86a6.62,6.62,0,0,0,1.68,4.67,6.12,6.12,0,0,0,4.74,1.82q4.56,0,6.06-3.56h10.54a13.56,13.56,0,0,1-5.63,8.59,18.09,18.09,0,0,1-11,3.38q-8.19,0-13.07-4.49t-4.88-12.4v-4.63q0-8,4.67-12.75t13-4.77q8.12,0,12.61,4.7a16.36,16.36,0,0,1,4.49,11.76v6.84Zm-23.23-7.77v0.78h12.25v-1.35a7,7,0,0,0-1.53-4.7,5.64,5.64,0,0,0-4.52-1.78Q117.07,133.66,117.07,140.71Z"/><path class="refugee" d="M161.24,163.37h-12V135.3h-4.35V126h4.35V123.4q0-6.27,2.78-9.16t9.33-2.89h7v9.41h-3.92a3.5,3.5,0,0,0-2.46.71,3.14,3.14,0,0,0-.75,2.35V126h6.7v9.26h-6.7v28.07Z"/><path class="refugee" d="M195.94,126h12v37.34H196.44V159q-2.92,5.2-10.4,5.2-6.13,0-9.44-3.78t-3.31-10.33V126h12v22.59a5.9,5.9,0,0,0,1.32,4.1,4.87,4.87,0,0,0,3.81,1.46q5.56,0,5.56-5.7V126Z"/><path class="refugee" d="M252,126v36.2a12.6,12.6,0,0,1-5.24,10.26q-5.24,4.13-13.43,4.13a22,22,0,0,1-12.08-3.24,12.53,12.53,0,0,1-6-8.73h11.61q1.35,3.06,6.48,3.06a7.09,7.09,0,0,0,4.92-1.6,5.43,5.43,0,0,0,1.78-4.24v-4.42a11,11,0,0,1-4.1,2.89,13.91,13.91,0,0,1-5.66,1.18q-7.34,0-11.36-4.56a16.1,16.1,0,0,1-4-11v-5.13a16,16,0,0,1,4-11.12q4-4.49,11.44-4.49a13.59,13.59,0,0,1,6.41,1.5,9.07,9.07,0,0,1,3.85,3.28V126H252Zm-12,15.32a6.06,6.06,0,0,0-1.92-4.77,6.93,6.93,0,0,0-4.77-1.71,6.34,6.34,0,0,0-5,1.85,7,7,0,0,0-1.67,4.85v3.56a6.91,6.91,0,0,0,1.67,4.88,6.31,6.31,0,0,0,4.88,1.82,6.87,6.87,0,0,0,4.92-1.75,6.2,6.2,0,0,0,1.85-4.74v-4Z"/><path class="refugee" d="M293.77,148.48H270.54v0.86a6.62,6.62,0,0,0,1.68,4.67,6.12,6.12,0,0,0,4.74,1.82q4.56,0,6.06-3.56h10.54a13.56,13.56,0,0,1-5.63,8.59,18.09,18.09,0,0,1-11,3.38q-8.19,0-13.07-4.49T259,147.34v-4.63q0-8,4.67-12.75t13-4.77q8.12,0,12.61,4.7a16.36,16.36,0,0,1,4.49,11.76v6.84Zm-23.23-7.77v0.78h12.25v-1.35a7,7,0,0,0-1.53-4.7,5.64,5.64,0,0,0-4.52-1.78Q270.54,133.66,270.54,140.71Z"/><path class="refugee" d="M334.23,148.48H311v0.86a6.62,6.62,0,0,0,1.68,4.67,6.12,6.12,0,0,0,4.74,1.82q4.56,0,6.06-3.56H334a13.56,13.56,0,0,1-5.63,8.59,18.09,18.09,0,0,1-11,3.38q-8.19,0-13.07-4.49t-4.88-12.4v-4.63q0-8,4.67-12.75t13-4.77q8.12,0,12.61,4.7a16.36,16.36,0,0,1,4.49,11.76v6.84ZM311,140.71v0.78h12.25v-1.35a7,7,0,0,0-1.53-4.7,5.64,5.64,0,0,0-4.52-1.78Q311,133.66,311,140.71Z"/>
+		<path class="nation" d="M100.32,224.57H88.64L70,195.43v29.14H58V174.7H69.62l18.74,29.14V174.7h12v49.87Z"/><path class="nation" d="M144.5,224.57H133v-3.14q-3.42,4-11,4-6.34,0-10-3.28a10.84,10.84,0,0,1-3.67-8.48q0-5.63,3.88-8.62t10.58-3q6.34,0,9.76,2.78v-4.35a4.66,4.66,0,0,0-1.39-3.49,5.23,5.23,0,0,0-3.81-1.35q-4,0-5.42,2.71H111a13.68,13.68,0,0,1,5.63-8.8,18.66,18.66,0,0,1,11-3.17q7.91,0,12.36,4t4.45,10.94v23.23ZM126,217.81a8.29,8.29,0,0,0,4.67-1.25,3.52,3.52,0,0,0,.07-6.2,8,8,0,0,0-4.6-1.25q-6.63,0-6.63,4.35a3.6,3.6,0,0,0,1.78,3.21A8.61,8.61,0,0,0,126,217.81Z"/><path class="nation" d="M154.19,177.19h12v10h7.2v9.26h-7.2v15.89q0,2.49,2.71,2.49h3.92v9.69h-7.91q-5.27,0-8-2.92t-2.71-8.12v-17h-4.85v-9.26h4.85v-10Z"/><path class="nation" d="M181.51,182.22a6.54,6.54,0,0,1,0-9,7.74,7.74,0,0,1,9.62,0,6.54,6.54,0,0,1,0,9A7.74,7.74,0,0,1,181.51,182.22Zm10.79,42.36h-12V187.24h12v37.34Z"/><path class="nation" d="M236,203.41v5a16.43,16.43,0,0,1-4.85,12.29q-4.85,4.74-13.32,4.74t-13.32-4.74a16.43,16.43,0,0,1-4.85-12.29v-5a16.43,16.43,0,0,1,4.85-12.29q4.84-4.74,13.32-4.74t13.32,4.74A16.43,16.43,0,0,1,236,203.41Zm-11.61-.64a7.43,7.43,0,0,0-1.64-5,7.24,7.24,0,0,0-9.83,0,7.43,7.43,0,0,0-1.64,5V209a7.42,7.42,0,0,0,1.64,5,7.24,7.24,0,0,0,9.83,0,7.43,7.43,0,0,0,1.64-5v-6.27Z"/><path class="nation" d="M254.93,224.57H243V187.24h11.47v4.35q2.92-5.2,10.4-5.2,6.34,0,9.73,3.78t3.38,10.33v24.08H266V202.34a5.71,5.71,0,0,0-1.39-4.1,5.3,5.3,0,0,0-4-1.46q-5.63,0-5.63,5.7v22.09Z"/>
+		</svg>
+	</div>
+</div>
+
+
+<div id="fullpage">
+
+	<div class="section " id="section0">
+		<div class="layer" data-depth="0.10">
+			<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+				<p class= "manifesto-text">They come from different countries<span class="white">.</span> They are raised in different cultures<span class="white">.</span> They speak different languages<span class="white">.</span> But one thing still brings them all together: the will of finding a place to call home<span class="white">.</span> Refugees are united by one hope<span class="white">.</span> And now, they are also united by one flag<span class="white">.</span> An orange and black flag inspired by the life vests many brothers and sisters had to wear in their search for a safer land to live<span class="white">.</span> An orange and black flag as a symbol of hope and solidarity<span class="white">.</span> An orange and black flag to bring the world together to support refugees<span class="white">.</span>
+				Because they exist<span class="white">.</span> They are millions<span class="white">.</span> And they matter<span class="white">.</span> While this crisis persists, we’ll be on their side<span class="white">.</span></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="section section-container" id="section1">
+		<div class="section-container">
+		<video id="fullVideo" loop muted data-autoplay data-keepplaying>
+			<source data-src="vid/hero-bg.webm" type="video/webm">
+		</video>
+		</div>
+	</div>
+
+
+	<div class="section" id="section2">
+		<div class="row layer1">
+			<div class="col-sm-5 col-sm-offset-2">
+				<h1>Our Beliefs</h1>
+				<hr class="bar-lg">
+			</div>
+		</div>
+	</div>
+
+	<div class="section" id="section3">
+		<div class="filmTitle">
+			<h1>The<br>Refugee<br>Nation</h1>
+			<hr class="bar-video">
+		</div>
+		<iframe id="fullFilmVideo1" class="layer2" src="https://www.youtube.com/embed/VWjD6bUpKn8?version=3&loop=1&modestbranding=1&autohide=1&showinfo=0&controls=1&scrolling=0&disablekb=1&rel=0&color=white" frameborder="0" scrolling="0" allowfullscreen data-autoplay></iframe>
+		<div class="scroll-enable"></div>
+	</div>
+
+
+	<div class="section section-container" id="section4">
+		<div class="row layer layer1" data-depth="0.20">
+			<div class="col-sm-3 col-xs-offset-2">
+				<h1>Our Flag</h1>
+			</div>
+			<div class="col-sm-3 col-xs-offset-2">
+				<p>The flag of the Refugee Nation was designed by the artist Yara Said, a Syrian refugee who found asylum in Amsterdam.</p>
+			</div>
+			<div class="col-sm-4 col-xs-offset-3">
+				<hr class="bar-lg">
+				<h2>“Black and orange is a symbol of solidarity with all these brave souls that had to wear lifevests to cross the sea to look for safety in a new country. Since I had wear one, I have a personal engagement with these life-vests, and these two colors.”</h2>
+				<h4>YARA SAID</h4>
+			</div>
+		</div>
+		<div class="row layer layer2" data-depth="0.10">
+			<div class="col-sm-6 col-xs-offset-5 vidwrapper">
+				<video id="fullVideo" loop data-autoplay muted data-keepplaying>
+					<source data-src="vid/flag_short.mp4" type="video/mp4">
+				</video>
+			</div>
+		</div>
+	</div>
+
+	<div class="section section-container" id="section5">
+		<div class="filmTitle">
+			<h1>Our<br>Flag</h1>
+			<hr class="bar-video">
+		</div>
+		<iframe id="fullFilmVideo2" class="layer2" src="https://www.youtube.com/embed/cCM4ZH4fQNE?version=3&loop=1&modestbranding=1&autohide=1&showinfo=0&controls=1&disablekb=1&rel=0&color=white" frameborder="0" scrolling="0" allowfullscreen data-autoplay></iframe>
+		<div class="scroll-enable"></div>
+	</div>
+
+	<div class="section section-container" id="section6">
+		<div class="row vert layer layer1" data-depth="0.20">
+			<div class="col-xs-12 col-sm-4 col-xs-offset-2 col-sm-offset-7">
+				<h1>Our Anthem</h1>
+			</div>
+			<div class="cols-xs-12 col-sm-3 col-xs-offset-2 col-sm-offset-8">
+				<p>The anthem was written by the composer Moutaz Arian, a Syrian refugee currently living in Istanbul. Since the refugee crisis is a global issue, Arian decided to create an anthem without words to resonate beyond borders:</p>
+			</div>
+			<div class="col-xs-12 col-sm-4 col-xs-offset-3 col-sm-offset-7">
+				<hr class="bar-lg">
+				<h2>“Music is the best language to deliver my message to humanity, which is to love each other, and this language does not require a translation.”</h2>
+				<h4>MOUTAZ ARIAN</h4>
+			</div>
+		</div>
+		<div class="row layer layer2" data-depth="0.10">
+			<div class="col-sm-6 col-xs-offset-2 vidwrapper">
+				<video id="fullVideo" loop data-autoplay muted data-keepplaying>
+					<source data-src="vid/anthem_short_2.mp4" type="video/mp4">
+				</video>
+			</div>
+		</div>
+	</div>
+
+	<div class="section section-container" id="section7">
+		<div class="filmTitle">
+			<h1>Our<br>Anthem</h1>
+			<hr class="bar-video">
+		</div>
+		<iframe id="fullFilmVideo3" class="layer2" src="https://www.youtube.com/embed/cCM4ZH4fQNE?version=3&loop=1&modestbranding=1&autohide=1&showinfo=0&controls=1&disablekb=1&rel=0&color=white" frameborder="0" scrolling="0" allowfullscreen data-autoplay></iframe>
+		<div class="scroll-enable"></div>
+	</div>
+
+	<div class="section section-container" id="section8">
+		
+		<div class="layer layer1 ourpeople" data-depth="0.20">
+			<div class="col-sm-12 col-xs-offset-0 pointer-none">
+				<h1 >Our People</h1>
+				<hr class="bar-lg">
+			</div>
+			<div class="col-sm-12 col-xs-offset-0">
+				<p>We’re all united by hope and solidarity.<br>We’re all standing up for refugees.</p>
+			</div>
+			<div class="col-sm-12 col-xs-offset-0 controlArrowContainer">
+				<div class="fp-controlArrow fp-prev">
+					<svg>
+						<polyline class="control-arrow" points="33.6,39.1 24.4,30 33.6,20.9 "/>
+					</svg>
+				</div>
+				<div class="fp-controlArrow fp-next">
+					<svg>
+						<polyline class="control-arrow" points="26.4,20.9 35.6,30 26.4,39.1 "/>
+					</svg>
+				</div>
+			</div>
+		</div>
+
+	    <div class="slide ourpeople" id="slide1">
+	    	<div class="ourpeople-container-back layer" data-depth="0.10">
+	    		<div class="imgwrapper"><img src="img/ourpeople/r1c1.jpg" alt></div>
+	    	</div>
+	    	<div class="ourpeople-container layer" data-depth="0.15">
+	    		<div class="imgwrapper"><img src="img/ourpeople/r1c2.jpg" alt></div>
+	    	</div>
+		</div>
+
+	    <div class="slide ourpeople" id="slide2">
+			<div class="ourpeople-container-back layer" data-depth="0.10">
+	    		<div class="imgwrapper">
+	    			<div class="caption">
+		    			<h4 class="help">AI WEI WEI and YARA SAID</h4>
+						<hr class="bar-sm">
+						<h2 class="ourpeople">Where there is a just cause, there are voices of righteousness to stand by it. Ai Weiwei is one of those voices, always in support of those in need.</h2>
+					</div>
+	    			<img src="img/ourpeople/r1c3.jpg" alt>
+	    		</div>
+	    	</div>
+	    	<div class="ourpeople-container layer" data-depth="0.15">
+	    		<div class="imgwrapper">
+	    			<div class="caption">
+		    			<h4 class="help">Refugee athletes</h4>
+						<hr class="bar-sm">
+						<h2 class="ourpeople">“This flag doesn’t represent only me, Yolande. It represents all the refugees around the world.” - Yolande Mabika, refugee athlete.</h2>
+					</div>
+	    		<img src="img/ourpeople/r1c4.jpg" alt></div>
+	    	</div>
+		</div>
+
+		<div class="slide ourpeople" id="slide3">
+	    	<div class="ourpeople-container-back layer" data-depth="0.10">
+	    		<div class="imgwrapper">
+	    			<div class="caption">
+		    			<h4 class="help">Kakuma, Kenya</h4>
+						<hr class="bar-sm">
+						<h2 class="ourpeople">“This flag gives a message to engage humanity. We can’t let people die just because they are in search of a safer place to live.” Charly Kongo.</h2>
+					</div>
+	    			<img src="img/ourpeople/r1c5.jpg" alt>
+	    		</div>
+	    	</div>
+	    	<div class="ourpeople-container layer" data-depth="0.15">
+	    		<div class="imgwrapper">
+	    			<div class="caption">
+		    			<h4 class="help">World Leaders</h4>
+						<hr class="bar-sm">
+						<h2 class="ourpeople">U.S. Department of State - "Making Media That Matters: Amplifying The Stories Of Refugees".</h2>
+					</div>
+	    			<img src="img/ourpeople/r1c6.jpg" alt>
+	    		</div>
+	    	</div>
+		</div>
+
+		<div class="slide ourpeople" id="slide4">
+	    	<div class="ourpeople-container-back layer" data-depth="0.10">
+	    		<div class="imgwrapper">
+	    			<div class="caption">
+		    			<h4 class="help">2016 Olympic Games</h4>
+						<hr class="bar-sm">
+						<h2 class="ourpeople">Athletes from other nations salute the Refugee Nation flag during the hockey game.</h2>
+					</div>
+	    			<img src="img/ourpeople/r1c7.jpg" alt>
+	    		</div>
+	    	</div>
+	    	<div class="ourpeople-container layer" data-depth="0.15">
+	    		<div class="imgwrapper">
+	    			<div class="caption">
+		    			<h4 class="help">A symbol of hope</h4>
+						<hr class="bar-sm">
+						<h2 class="ourpeople">The flag being raised among the life vests, in Lesbos (Greece).</h2>
+					</div>
+	    			<img src="img/ourpeople/r1c1.jpg" alt>
+	    		</div>
+	    	</div>
+		</div>
+
+		<div class="slide ourpeople" id="slide5">
+	    	<div class="ourpeople-container-back layer" data-depth="0.10">
+	    		<div class="imgwrapper">
+	    			<div class="caption">
+		    			<h4 class="help">A symbol of hope</h4>
+						<hr class="bar-sm">
+						<h2 class="ourpeople">The flag being raised among the life vests, in Lesbos (Greece).</h2>
+					</div>
+	    			<img src="img/ourpeople/r1c1.jpg" alt>
+	    		</div>
+	    	</div>
+	    	<div class="ourpeople-container layer" data-depth="0.15">
+	    		<div class="imgwrapper">
+	    			<div class="caption">
+		    			<h4 class="help">Refugee athletes</h4>
+						<hr class="bar-sm">
+						<h2 class="ourpeople">"A sister refugee from Syrian has made this for all of us, refugee people. This flag is a gift I’ll never forget.” - Popole Misenga, refugee athlete.</h2>
+					</div>
+	    			<img src="img/ourpeople/r1c2.jpg" alt>
+	    		</div>
+	    	</div>
+		</div>
+
+	</div>
+
+	<div class="section" id="section9">
+		<div class="row layer1">
+			<div class="col-sm-5 col-sm-offset-2">
+				<h1>Recent News</h1>
+				<hr class="bar-lg">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3 col-sm-offset-2">
+				<img class="news-img" src="img/news/news-01.jpg" alt>
+				<hr class="bar-news">
+				<h2>How can a flag create job opportunities for refugees in Europe?</h2>
+				<div class="cta-btn">
+					<a href="#"></a>
+					<svg>
+    					<rect class="cta-bottom" x="0" y="0" fill="none" width="180" height="45" />
+    					<rect class="cta-top"x="0" y="0" fill="none" width="180" height="45" />
+  					</svg>
+  					Read More
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<img class="news-img" src="img/news/news-02.jpg" alt>
+				<hr class="bar-news">
+				<h2> A symbol of hope takes over the Oscars.</h2>
+				<div class="cta-btn">
+					<a href="#"></a>
+					<svg>
+    					<rect class="cta-bottom" x="0" y="0" fill="none" width="180" height="45" />
+    					<rect class="cta-top"x="0" y="0" fill="none" width="180" height="45" />
+  					</svg>
+  					Read More
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<img class="news-img" src="img/news/news-03.jpg" alt>
+				<hr class="bar-news">
+				<h2>Sanctuary cities raise the refugee flag and make a bold statement.</h2>
+				<div class="cta-btn">
+					<a href="#"></a>
+					<svg>
+    					<rect class="cta-bottom" x="0" y="0" fill="none" width="180" height="45" />
+    					<rect class="cta-top"x="0" y="0" fill="none" width="180" height="45" />
+  					</svg>
+  					Read More
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="section" id="section10">
+		<div class="row layer1">
+			<div class="col-sm-5 col-sm-offset-2">
+				<h1 class="help">How Can I Help?</h1>
+				<hr class="bar-lg help">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3 col-sm-offset-2">
+				<div class="icon-container">
+					<img src="img/flag.svg">
+				</div>
+				<h4 class="help">Purchase the<br>Refugee Flag</h4>
+				<hr class="bar-sm">
+				<h2 class="help">Raise the orange and<br>black flag and show<br>your support.</h2>
+				<div class="cta-btn">
+					<a href="#"></a>
+					<svg>
+    					<rect class="cta-bottom" x="0" y="0" fill="none" width="180" height="45" />
+    					<rect class="cta-top"x="0" y="0" fill="none" width="180" height="45" />
+  					</svg>
+  					Visit Site
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="icon-container">
+					<img src="img/refugee.svg">
+				</div>
+				<h4 class="help">hire<br>a Refugee</h4>
+				<hr class="bar-sm">
+				<h2 class="help">Visit a partner website and learn more about hiring refugees.</h2>
+				<div class="cta-btn">
+					<a href="#"></a>
+					<svg>
+    					<rect class="cta-bottom" x="0" y="0" fill="none" width="180" height="45" />
+    					<rect class="cta-top"x="0" y="0" fill="none" width="180" height="45" />
+  					</svg>
+  					Visit Site
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="icon-container">
+					<img src="img/product.svg">
+				</div>
+				<h4 class="help">Buy products<br>made by refugees</h4>
+				<hr class="bar-sm">
+				<h2 class="help">Visit a partner<br>website and help the<br>refugee economy.</h2>
+				<div class="cta-btn">
+					<a href="#"></a>
+					<svg>
+    					<rect class="cta-bottom" x="0" y="0" fill="none" width="180" height="45" />
+    					<rect class="cta-top"x="0" y="0" fill="none" width="180" height="45" />
+  					</svg>
+  					Visit Site
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+	<script src="./js/jquery.parallax.js"></script>
+	<script>
+		$('#section0').parallax();
+		$('#section4').parallax();
+		$('#section6').parallax();
+		$('#section8').parallax();
+
+		function randomMargin(){
+	    $('.imgwrapper').each(function(){
+	        randomizeObject(this);
+	    });
+		}
+
+		function randomizeObject(el){
+		    var randomnumber1=Math.floor(Math.random()* ( 10 - -5)+0 );
+		    console.log(randomnumber1);
+		    var randomnumber2=Math.floor(Math.random()* (5 - 0) +0 );
+		    console.log(randomnumber2);
+		    $(el).css({"margin-top": randomnumber1+"%", "margin-left": randomnumber2+"%"});
+		}
+		randomMargin();
+
+	</script>
+
+</body>
+
+
+
+</html>
